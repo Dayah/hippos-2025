@@ -5,11 +5,17 @@
   "start": 1752677280000,
   "end": 1752678000000,
   "initialTime": 1752677280000,
+  "viewOrder": [
+    "people",
+    "wall",
+    "glasses",
+    "zoo"
+  ],
   "publishRange": {
     "start": 1752677280000,
     "end": 1752678000000
   },
-  "generatedAt": "2026-08-25T15:49:11.180Z",
+  "generatedAt": "2026-08-25T16:24:39.931Z",
   "warnings": [],
   "sources": [
     {
