@@ -15,7 +15,7 @@
     "start": 1752677280000,
     "end": 1752678000000
   },
-  "generatedAt": "2026-08-25T16:37:40.728Z",
+  "generatedAt": "2026-08-25T16:42:27.153Z",
   "warnings": [],
   "sources": [
     {
@@ -2205,17 +2205,6 @@
           "rawStart": 1752677967000,
           "duration": 3,
           "url": "media/2025-07-16/glasses/20250716_105926_4fc1fbbf.jpg"
-        },
-        {
-          "id": "glasses:20250716_112024_bd18ba19.jpg",
-          "name": "20250716_112024_bd18ba19.jpg",
-          "type": "image",
-          "start": 1752677967000,
-          "contentEnd": 1752677970000,
-          "end": 1752677970600,
-          "rawStart": 1752677967000,
-          "duration": 3,
-          "url": "media/2025-07-16/glasses/20250716_112024_bd18ba19.jpg"
         }
       ]
     }
