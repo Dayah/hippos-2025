@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hippo BTS</title>
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <aside class="masthead">
+    <h1 id="title">Hippos Behind the Scenes</h1>
+    <p id="date">July 16, 2025</p>
+  </aside>
+
+  <main>
+    <section id="grid" class="grid" aria-label="Synchronized media"></section>
+
+    <section class="transport" aria-label="Playback controls">
+      <div class="transport-row">
+        <div class="skip-group" aria-label="Replay">
+          <button type="button" data-skip="-30" aria-label="Replay 30 seconds">−30</button>
+          <button type="button" data-skip="-10" aria-label="Replay 10 seconds">−10</button>
+          <button type="button" data-skip="-5" aria-label="Replay 5 seconds">−5</button>
+        </div>
+        <button id="play" class="play" type="button" aria-label="Play">▶</button>
+        <div class="skip-group" aria-label="Skip ahead">
+          <button type="button" data-skip="5" aria-label="Skip ahead 5 seconds">+5</button>
+          <button type="button" data-skip="10" aria-label="Skip ahead 10 seconds">+10</button>
+          <button type="button" data-skip="30" aria-label="Skip ahead 30 seconds">+30</button>
+        </div>
+        <time id="clock">--:--:--</time>
+        <label class="speed">Speed
+          <select id="speed">
+            <option value="0.5">0.5×</option>
+            <option value="1" selected>1×</option>
+            <option value="2">2×</option>
+            <option value="4">4×</option>
+            <option value="8">8×</option>
+          </select>
+        </label>
+      </div>
+      <div class="timeline-wrap">
+        <div id="lanes" class="lanes" aria-hidden="true"></div>
+        <input id="timeline" type="range" min="0" max="1000" value="0" step="10" aria-label="Trip timeline">
+      </div>
+      <div class="timeline-labels"><span id="timeline-start"></span><span id="timeline-end"></span></div>
+      <p id="warnings" class="warnings" hidden></p>
+    </section>
+  </main>
+
+  <template id="panel-template">
+    <article class="panel">
+      <div class="stage">
+        <video class="media video" playsinline muted preload="metadata"></video>
+        <img class="media image" alt="" decoding="async">
+        <div class="empty">No coverage</div>
+      </div>
+    </article>
+  </template>
+</body>
+</html>

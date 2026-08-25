@@ -1,0 +1,72 @@
+{
+  "id": "2025-07-16",
+  "title": "Hippos Behind the Scenes",
+  "timezoneOffset": "-04:00",
+  "initialTime": "2025-07-16T10:48:00-04:00",
+  "range": {
+    "start": { "timestamp": "2025-07-16T10:15:00-04:00" },
+    "end": { "sourceIds": ["zoo"], "mediaTypes": ["image"], "shiftSeconds": 60 }
+  },
+  "publishRange": {
+    "start": { "timestamp": "2025-07-16T10:48:00-04:00" },
+    "end": { "timestamp": "2025-07-16T11:00:00-04:00" }
+  },
+  "publish": {
+    "maxFileMiB": 95,
+    "targetFileMiB": 92,
+    "imageMax": "1920x1080",
+    "jpegQuality": 82,
+    "imageWorkers": 4,
+    "release": {
+      "repository": "Dayah/hippos-2025",
+      "tag": "hippos-2025-v1",
+      "maxFileMiB": 2047,
+      "targetFileMiB": 1900
+    }
+  },
+  "sources": [
+    {
+      "id": "people",
+      "label": "People camera",
+      "kind": "continuous",
+      "root": "/mnt/g/hippocam",
+      "match": "^PEOPLE_2025-07-16_[0-9-]+\\.mp4$",
+      "timestamp": { "type": "filename", "pattern": "PEOPLE_yyyy-MM-dd_HH-mm-ss.mp4" },
+      "sync": { "anchor": "2025-07-16T09:30:02-04:00", "offsetSeconds": -5, "clockRate": 1 }
+    },
+    {
+      "id": "wall",
+      "label": "Wall camera",
+      "kind": "continuous",
+      "root": "/mnt/g/hippocam",
+      "match": "^WALL_2025-07-16_[0-9-]+\\.mp4$",
+      "timestamp": { "type": "filename", "pattern": "WALL_yyyy-MM-dd_HH-mm-ss.mp4" },
+      "sync": { "anchor": "2025-07-16T09:30:02-04:00", "offsetSeconds": -5, "clockRate": 1 }
+    },
+    {
+      "id": "zoo",
+      "label": "Zoo camera",
+      "kind": "events",
+      "root": "/mnt/c/photos/2025/2025-07-16 Hippos",
+      "match": "^BTS_[0-9]+\\.JPG$",
+      "timestamp": { "type": "exif", "field": "DateTimeOriginal" },
+      "photoHoldSeconds": 3,
+      "fadeSeconds": 0.6,
+      "sync": { "anchor": "2025-07-16T10:39:10-04:00", "offsetSeconds": 0, "clockRate": 1 }
+    },
+    {
+      "id": "glasses",
+      "label": "Meta Glasses",
+      "kind": "events",
+      "root": "/mnt/c/photos/2025/2025 Glasses",
+      "match": "^20250716_[0-9]{6}_[a-f0-9]+\\.(jpg|mp4)$",
+      "timestamp": {
+        "photos": { "type": "exif", "field": "DateTimeOriginal" },
+        "videos": { "type": "mediaEnd", "field": "creation_time" }
+      },
+      "photoHoldSeconds": 3,
+      "fadeSeconds": 0.6,
+      "sync": { "anchor": "2025-07-16T09:55:16-04:00", "offsetSeconds": 0, "clockRate": 1 }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "hippo-bts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit:glasses": "node scripts/audit-glasses.js",
+    "build:pages": "node scripts/build-pages.js",
+    "manifest": "node scripts/build-manifest.js",
+    "preview:pages": "HIPPO_PUBLIC_ROOT=dist-pages PORT=8081 node server.js",
+    "start": "node server.js"
+  }
+}
