@@ -204,9 +204,18 @@ function seek(time) {
   render();
 }
 
+function orderedSources() {
+  const byId = new Map(state.manifest.sources.map((source) => [source.id, source]));
+  const ordered = (state.manifest.viewOrder ?? [])
+    .map((id) => byId.get(id))
+    .filter(Boolean);
+  const included = new Set(ordered.map((source) => source.id));
+  return ordered.concat(state.manifest.sources.filter((source) => !included.has(source.id)));
+}
+
 function buildPanels() {
   const grid = $("#grid");
-  for (const source of state.manifest.sources) {
+  for (const source of orderedSources()) {
     const fragment = $("#panel-template").content.cloneNode(true);
     const article = fragment.querySelector("article");
     const panel = {
@@ -222,7 +231,7 @@ function buildPanels() {
 function buildLanes() {
   const lanes = $("#lanes");
   const span = state.manifest.end - state.manifest.start;
-  for (const source of state.manifest.sources) {
+  for (const source of orderedSources()) {
     const lane = document.createElement("div");
     lane.className = "lane";
     for (const item of source.items) {

@@ -3,6 +3,7 @@
   "title": "Hippos Behind the Scenes",
   "timezoneOffset": "-04:00",
   "initialTime": "2025-07-16T10:48:00-04:00",
+  "viewOrder": ["people", "wall", "glasses", "zoo"],
   "range": {
     "start": { "timestamp": "2025-07-16T10:15:00-04:00" },
     "end": { "sourceIds": ["zoo"], "mediaTypes": ["image"], "shiftSeconds": 60 }

@@ -166,6 +166,7 @@ async function buildTrip(configPath) {
     start,
     end,
     initialTime,
+    viewOrder: config.viewOrder,
     publishRange,
     generatedAt: new Date().toISOString(),
     warnings,
